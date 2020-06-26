@@ -17,14 +17,11 @@ class KeyByteHolder(): # im paid by LoC, excuse the enterprise level code
 
     def __repr__(self):
         return hex(self.num)[2:]
-`
-`
 def rc4(text, key): # definitely not stolen from stackoverflow
     S = [i for i in range(256)]
     j = 0
     out = bytearray()
-`
-`
+    
     #KSA Phase
     for i in range(256):
         j = (j + S[i] + key[i % len(key)].num) % 256
@@ -39,8 +36,7 @@ def rc4(text, key): # definitely not stolen from stackoverflow
         out.append(ord(char) ^ S[(S[i] + S[j]) % 256])
 
     return out
-`
-`
+
 def take(iterator, count):
     return [next(iterator) for _ in range(count)]
 
@@ -50,8 +46,7 @@ def generate_key():
     for i, c in enumerate(take(flag, 8)): # use top secret master password to encrypt all passwords
         key[i].num = c
     return key
-`
-`
+
 def main(args):
     if len(args) != 2:
         print("usage: python {} [import|export|microwave_hdd]".format(args[0]))
@@ -69,8 +64,7 @@ def main(args):
         print("Import complete! Passwords securely stored on disk with your private key in flag.txt! You may now safely delete flag.txt.")
     else:
         print("This feature is not implemented. Check back in a later update.")
-`
-`
+
 if __name__ == "__main__":
     import sys
     main(sys.argv)
