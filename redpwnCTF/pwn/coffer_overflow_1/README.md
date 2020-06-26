@@ -1,7 +1,7 @@
 # coffer-overflow-1
 Author: [UltimateHG](https://github.com/UltimateHG)
 ### Slightly more advanced
-This is a continuation of coffer-overflow-0.
+This is a continuation of [coffer-overflow-0](https://github.com/CSGang/Writeups/tree/master/redpwnCTF/pwn/coffer_overflow_0).
 We take a look at the source code:
 ```
 #include <stdio.h>
