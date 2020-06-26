@@ -31,6 +31,7 @@ This time, we would need to not only overwrite `code`, but also overwrite it wit
 We use the same approach as before, with a padding of 32-8 = 24 characters followed by `0xcafebabe` in little endian.
 <br>
 Here is the final exploit:
+
 ```
 #!/usr/bin/env python
 
