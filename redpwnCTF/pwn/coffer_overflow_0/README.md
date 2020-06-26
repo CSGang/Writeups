@@ -1,6 +1,6 @@
-#coffer-overflow-0
+# coffer-overflow-0
 Author: [UltimateHG](https://github.com/UltimateHG)
-###Basics of the basics
+### Basics of the basics
 So, how do we approach this question? We can take a look at the source provided (coffer-overflow-0.c):
 ```
 #include <stdio.h>
