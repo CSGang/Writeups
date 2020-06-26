@@ -1,6 +1,6 @@
-#coffer-overflow-1
+# coffer-overflow-1
 Author: [UltimateHG](https://github.com/UltimateHG)
-###Slightly more advanced
+### Slightly more advanced
 This is a continuation of coffer-overflow-0.
 We take a look at the source code:
 ```
@@ -46,6 +46,7 @@ payload += p64(0xcafebabe)
 p.sendline(payload)
 p.interactive()
 ```
+
 This should redirect us to shell, and we with a simple `ls` we can see an entry `flag.txt`, so we simply do `cat flag.txt` to obtain the flag:
 ```
 $ ls
