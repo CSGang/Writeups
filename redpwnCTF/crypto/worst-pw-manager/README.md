@@ -83,8 +83,7 @@ for pw_idx, password in enumerate(passwords.splitlines()):
             masked_file_name = "".join([chr((((c - ord("0") + i) % 10) + ord("0")) * int(chr(c) not in string.ascii_lowercase) + (((c - ord("a") + i) % 26) + ord("a")) * int(chr(c) in string.ascii_lowercase)) for c, i in zip([ord(a) for a in password], range(0xffff))])
 ```
 
-Long chunk of code, eh? But essentially, there are checks to see if each character in the password is a lowercase character or a number (ie `int(chr(c) not in string.ascii_lowercase))` and `int(chr(c) in string.ascii_lowercase))`). For each character in the password, it's incremented by its position in the password `i` and modulus'd
-if needed.
+Long chunk of code, eh? But essentially, there are checks to see if each character in the password is a lowercase character or a number (ie `int(chr(c) not in string.ascii_lowercase))` and `int(chr(c) in string.ascii_lowercase))`). For each character in the password, it's incremented by its position in the password `i` and modulus'd, depending on whether it's a letter or number, if needed.
 
 For example, the password 
 `password123` 
